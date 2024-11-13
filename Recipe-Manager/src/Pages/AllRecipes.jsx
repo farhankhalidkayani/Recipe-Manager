@@ -1,8 +1,8 @@
-import Hero from "../Components/Hero";
 import Container from "../Components/Container";
 import RecipeCard from "../Components/RecipeCard";
-import { useEffect, useState } from "react";
-function Homepage() {
+import { useState, useEffect } from "react";
+
+function AllRecipes() {
   const [loader, setLoader] = useState(true);
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
@@ -11,7 +11,7 @@ function Homepage() {
       const getRecipes = async () => {
         const res = await fetch(url);
         const data = await res.json();
-        setRecipes(data.slice(0, 4));
+        setRecipes(data);
       };
       getRecipes();
     } catch (err) {
@@ -22,8 +22,7 @@ function Homepage() {
   }, []);
   return (
     <>
-      <Hero />
-      <Container title={"Latest Recipes"}>
+      <Container title={"All Recipes"}>
         {loader
           ? "Loading ..."
           : recipes.map((recipe) => {
@@ -42,4 +41,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default AllRecipes;

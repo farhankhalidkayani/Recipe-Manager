@@ -20,7 +20,7 @@ const getRecipe = asyncHandler(async (req, res) => {
 
 const addRecipe = asyncHandler(async (req, res) => {
   const { title, ingredients, instructions, image } = req.body;
-  if (!title || !ingredients || !instructions || !image) {
+  if (!title || !ingredients || !instructions) {
     res.status(400);
     throw new Error("Please enter all the fields");
   }
