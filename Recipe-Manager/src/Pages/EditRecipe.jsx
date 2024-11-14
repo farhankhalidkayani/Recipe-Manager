@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Loader from "../Components/Loader";
 
 function EditRecipe() {
   const { id } = useParams(); // Get the recipe ID from the URL
@@ -72,7 +73,7 @@ function EditRecipe() {
   };
 
   if (!recipe) {
-    return <div>Loading...</div>; // Show loading state if recipe data isn't loaded yet
+    return <Loader />; // Show loading state if recipe data isn't loaded yet
   }
 
   return (
