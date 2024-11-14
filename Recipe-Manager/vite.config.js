@@ -8,7 +8,8 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "https://recipe-manager-backend.vercel.app/", // Your backend server's URL
+        target:
+          "https://recipe-manager-55zj-lku15m92l-farhankhalidkayanis-projects.vercel.app/", // Your backend server's URL
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""), // Optionally remove '/api' prefix
       },
