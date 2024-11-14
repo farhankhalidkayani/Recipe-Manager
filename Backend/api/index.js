@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const connect = require("../src/DB/connect.js");
 const recipeRoutes = require("../src/Routes/recipe.routes.js");
+const serverless = require("serverless-http");
 
 dotenv.config();
 connect();
@@ -13,8 +14,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-  console.log(`Listening at PORT ${process.env.PORT}`);
-});
-
 app.use("/recipes", recipeRoutes);
+
+module.exports = app;
+module.exports.handler = serverless(app);
