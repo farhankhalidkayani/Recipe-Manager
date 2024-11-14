@@ -18,7 +18,6 @@ app.get("/", (req, res) => {
 });
 app.use("/api/recipes", recipeRoutes);
 
-const server = http.createServer(app);
-server.listen(process.env.PORT, () => {
-  console.log(`Listening at PORT ${process.env.PORT}`);
-});
+module.exports = (req, res) => {
+  app(req, res);
+};
