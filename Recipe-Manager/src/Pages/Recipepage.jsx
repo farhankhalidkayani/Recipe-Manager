@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Loader from "../Components/Loader";
 
 function Recipepage() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function Recipepage() {
   };
 
   if (!recipe) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
