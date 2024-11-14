@@ -4,11 +4,10 @@ const express = require("express");
 const http = require("http");
 const connect = require("./src/DB/connect.js");
 const recipeRoutes = require("./src/Routes/recipe.routes.js");
+const app = express();
 
 dotenv.config();
 connect();
-
-const app = express();
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
