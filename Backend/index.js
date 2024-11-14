@@ -15,7 +15,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello" });
 });
-app.use("/api/recipes", recipeRoutes);
+app.use("/recipes", recipeRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening at PORT ${process.env.PORT}`);
