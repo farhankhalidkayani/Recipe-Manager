@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/api/recipes", recipeRoutes);
+app.use("/recipes", recipeRoutes);
 
 module.exports = app;
 module.exports.handler = serverless(app);
