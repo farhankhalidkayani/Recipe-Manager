@@ -17,7 +17,7 @@ function EditRecipe() {
     const fetchRecipe = async () => {
       try {
         const response = await fetch(
-          `https://recipe-manager-55zj.vercel.app/recipes/${id}`
+          `${import.meta.env.VITE_API_URL}recipes/${id}`
         );
         const data = await response.json();
         setRecipe(data);
@@ -49,7 +49,7 @@ function EditRecipe() {
 
     try {
       const response = await fetch(
-        `https://recipe-manager-55zj.vercel.app/recipes/${id}`,
+        `${import.meta.env.VITE_API_URL}recipes/${id}`,
         {
           method: "PUT", // PUT request for updating
           headers: {

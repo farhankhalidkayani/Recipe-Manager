@@ -6,7 +6,7 @@ function Homepage() {
   const [loader, setLoader] = useState(true);
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    const url = "https://recipe-manager-55zj.vercel.app/recipes";
+    const url = `${import.meta.env.VITE_API_URL}recipes`;
     try {
       const getRecipes = async () => {
         const res = await fetch(url);

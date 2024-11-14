@@ -10,7 +10,7 @@ function Recipepage() {
     const fetchRecipe = async () => {
       try {
         const response = await fetch(
-          `https://recipe-manager-55zj.vercel.app/recipes/${id}`
+          `${import.meta.env.VITE_API_URL}recipes/${id}`
         );
         const data = await response.json();
         setRecipe(data);
@@ -24,7 +24,7 @@ function Recipepage() {
 
   const handleDelete = async () => {
     try {
-      await fetch(`https://recipe-manager-55zj.vercel.app/recipes/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}recipes/${id}`, {
         method: "DELETE",
       });
       navigate("/recipes/");
