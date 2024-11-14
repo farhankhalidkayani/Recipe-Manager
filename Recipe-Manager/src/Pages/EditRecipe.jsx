@@ -46,13 +46,16 @@ function EditRecipe() {
     };
 
     try {
-      const response = await fetch(`/api/recipes/${id}`, {
-        method: "PUT", // PUT request for updating
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedRecipe),
-      });
+      const response = await fetch(
+        `https://recipe-manager-55zj.vercel.app/recipes/${id}`,
+        {
+          method: "PUT", // PUT request for updating
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedRecipe),
+        }
+      );
 
       if (response.ok) {
         navigate(`/recipes/${id}`); // Redirect to the recipe detail page after successful update

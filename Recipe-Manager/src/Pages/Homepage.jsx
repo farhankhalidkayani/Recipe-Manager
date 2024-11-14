@@ -6,7 +6,7 @@ function Homepage() {
   const [loader, setLoader] = useState(true);
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    const url = "/api/recipes";
+    const url = "https://recipe-manager-55zj.vercel.app/recipes";
     try {
       const getRecipes = async () => {
         const res = await fetch(url);

@@ -22,7 +22,7 @@ function Recipepage() {
 
   const handleDelete = async () => {
     try {
-      await fetch(`/api/recipes/${id}`, {
+      await fetch(`https://recipe-manager-55zj.vercel.app/recipes/${id}`, {
         method: "DELETE",
       });
       navigate("/recipes/");
