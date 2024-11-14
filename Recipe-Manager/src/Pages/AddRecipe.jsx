@@ -24,13 +24,16 @@ function AddRecipe() {
 
     try {
       // Post the new recipe data to the backend
-      const response = await fetch("/api/recipes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newRecipe),
-      });
+      const response = await fetch(
+        "https://recipe-manager-55zj.vercel.app/recipes/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newRecipe),
+        }
+      );
 
       if (response.ok) {
         // Redirect to homepage or recipe detail page after adding

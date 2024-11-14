@@ -16,7 +16,9 @@ function EditRecipe() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await fetch(`/api/recipes/${id}`);
+        const response = await fetch(
+          `https://recipe-manager-55zj.vercel.app/recipes/${id}`
+        );
         const data = await response.json();
         setRecipe(data);
         setTitle(data.title);
