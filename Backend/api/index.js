@@ -20,4 +20,4 @@ app.listen(process.env.PORT, () => {
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello" });
 });
-app.use("/recipes", recipeRoutes);
+app.use("/api/recipes", recipeRoutes);
